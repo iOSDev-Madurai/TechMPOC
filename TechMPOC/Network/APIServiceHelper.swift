@@ -13,7 +13,7 @@ class APIServiceHelper {
     public static let shared = APIServiceHelper()
 
     func factsAPIDetails() -> serviceReturnType {
-        return (URLConstatns.facts, nil, .get, nil)
+        return (URLConstants.facts, nil, .get, nil)
     }
 
 }

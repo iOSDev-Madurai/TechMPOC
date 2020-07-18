@@ -26,12 +26,14 @@ class APIService {
             let urlRequest = try URLRequest(serviceType)
             URLSession.shared.dataTask(with: urlRequest) { [weak self] (data, urlResponse, error) in
 
-                guard let strongSelf = self else { return }
-                let val = strongSelf.validate(ResponseData: data, withRequest: urlResponse, andError: error)
-                if let errorVal = val as? String {
-                    print(errorVal)
-                } else if let jsonData = val as? Data {
-                    completion(jsonData)
+                DispatchQueue.main.async {
+                    guard let strongSelf = self else { return }
+                    let val = strongSelf.validate(ResponseData: data, withRequest: urlResponse, andError: error)
+                    if let errorVal = val as? String {
+                        print(errorVal)
+                    } else if let jsonData = val as? Data {
+                        completion(jsonData)
+                    }
                 }
             }.resume()
         } catch  {
@@ -46,13 +48,7 @@ class APIService {
         if let err = error {
             return parse(Error: err, withURLResponse: urlResponse)
         } else if let responseData = data {
-            do {
-                let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments)
-                // print(jsonData)
-                return jsonData
-            } catch {
-                return parse(Error: error, withURLResponse: urlResponse)
-            }
+            return responseData.jsonData
         }
         return nil
     }
@@ -61,7 +57,7 @@ class APIService {
                         withURLResponse urlResponse: URLResponse?) -> String? {
 
         var errorMsg: String? = error.localizedDescription
-        if let statusError = self.isValidStatusCode(urlResponse) {
+        if let statusError = isValidStatusCode(urlResponse) {
             errorMsg = statusError
         }
         return errorMsg

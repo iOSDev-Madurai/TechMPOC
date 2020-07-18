@@ -31,12 +31,3 @@ public struct HTTPHeader: Hashable, CustomStringConvertible {
     }
     
 }
-
-
-extension Array where Element == HTTPHeader {
-    /// Case-insensitively finds the index of an `HTTPHeader` with the provided name, if it exists.
-    func index(of name: String) -> Int? {
-        let lowercasedName = name.lowercased()
-        return firstIndex { $0.name.lowercased() == lowercasedName }
-    }
-}

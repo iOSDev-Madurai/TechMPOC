@@ -1,5 +1,5 @@
 //
-//  URLConstatns.swift
+//  URLConstants.swift
 //  TechMPOC
 //
 //  Created by Jegadeeswaran on 18/07/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct URLConstatns {
+struct URLConstants {
 
     static let facts = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
 }

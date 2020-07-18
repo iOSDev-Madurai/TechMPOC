@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func addRootViewController() {
 
         let about = AboutTableViewController()
-        window!.rootViewController = about
+        window!.rootViewController = UINavigationController(rootViewController: about)
         window!.makeKeyAndVisible()
     }
 
