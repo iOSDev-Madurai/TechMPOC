@@ -10,6 +10,14 @@ import UIKit
 
 class AboutTableViewController: UITableViewController {
 
+    // Properties
+
+    private lazy var viewModel: AboutViewModel = {
+        return AboutViewModel()
+    }()
+
+    // MARK:- ViewController LifeCycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
