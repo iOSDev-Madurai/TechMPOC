@@ -28,9 +28,9 @@ class AboutTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(AboutTableViewCell.self, forCellReuseIdentifier: CellIdentifier.about)
-
         setNavigationDetails()
+
+        setupTableView()
 
         refreshView()
     }
@@ -40,17 +40,16 @@ class AboutTableViewController: UITableViewController {
     private func refreshView() {
 
         viewModel.getDetailsOfFacts { [weak self] (about) in
-            guard let strongSelf = self else { return }
-            strongSelf.details = about
+            self?.details = about
         }
     }
-    
+
     // MARK:- Navigation
 
     private func setNavigationDetails() {
 
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(self.refreshBarButtonTouched(_:)))
-        self.navigationItem.title = NavigtionConstants.Title.updating
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(self.refreshBarButtonTouched(_:)))
+        navigationItem.title = NavigtionConstants.Title.updating
     }
 
     @objc private func refreshBarButtonTouched(_ sender: UIBarButtonItem) {
@@ -58,7 +57,14 @@ class AboutTableViewController: UITableViewController {
         refreshView()
     }
 
-    // MARK: - Table view data source & Delegate
+    // MARK: - Table view
+
+    private func setupTableView() {
+
+        tableView.hideEmptyRows()
+
+        tableView.register(AboutTableViewCell.self, forCellReuseIdentifier: CellIdentifier.about)
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -78,6 +84,7 @@ class AboutTableViewController: UITableViewController {
             else {
                 return UITableViewCell()
         }
+        cell.imgView.downloadedImageForm(URL: row.imageHref)
         cell.titleLabel.text = row.title
         cell.descriptionLabel.text = row.rowDescription ?? " - "
         return cell

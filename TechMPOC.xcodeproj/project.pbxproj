@@ -12,6 +12,10 @@
 		387D19C624C35CBE009EC2F7 /* AboutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D19C524C35CBE009EC2F7 /* AboutTableViewCell.swift */; };
 		387D19C824C364F0009EC2F7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D19C724C364F0009EC2F7 /* UIView+Extension.swift */; };
 		387D19CA24C36F79009EC2F7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D19C924C36F79009EC2F7 /* Constants.swift */; };
+		387D19CC24C37658009EC2F7 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D19CB24C37658009EC2F7 /* UIApplication+Extension.swift */; };
+		387D19CE24C376B8009EC2F7 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D19CD24C376B8009EC2F7 /* UITableView+Extension.swift */; };
+		387D19D024C376FB009EC2F7 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D19CF24C376FB009EC2F7 /* UIViewController+Extension.swift */; };
+		387D19D224C37B8F009EC2F7 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D19D124C37B8F009EC2F7 /* UIImageView+Extension.swift */; };
 		38E3B05124C329E000A3425B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E3B05024C329E000A3425B /* AppDelegate.swift */; };
 		38E3B05A24C329E100A3425B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38E3B05924C329E100A3425B /* Assets.xcassets */; };
 		38E3B06824C329E100A3425B /* TechMPOCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E3B06724C329E100A3425B /* TechMPOCTests.swift */; };
@@ -51,6 +55,10 @@
 		387D19C524C35CBE009EC2F7 /* AboutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewCell.swift; sourceTree = "<group>"; };
 		387D19C724C364F0009EC2F7 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		387D19C924C36F79009EC2F7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		387D19CB24C37658009EC2F7 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		387D19CD24C376B8009EC2F7 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		387D19CF24C376FB009EC2F7 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		387D19D124C37B8F009EC2F7 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		38E3B04D24C329E000A3425B /* TechMPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechMPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E3B05024C329E000A3425B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38E3B05924C329E100A3425B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -214,6 +222,10 @@
 				387D19C024C358E7009EC2F7 /* Data+Extension.swift */,
 				387D19C224C35ACC009EC2F7 /* Collection+Extension.swift */,
 				387D19C724C364F0009EC2F7 /* UIView+Extension.swift */,
+				387D19CB24C37658009EC2F7 /* UIApplication+Extension.swift */,
+				387D19CD24C376B8009EC2F7 /* UITableView+Extension.swift */,
+				387D19CF24C376FB009EC2F7 /* UIViewController+Extension.swift */,
+				387D19D124C37B8F009EC2F7 /* UIImageView+Extension.swift */,
 			);
 			path = ExtensionHelpers;
 			sourceTree = "<group>";
@@ -338,12 +350,16 @@
 				38F13E6624C3367A00BFD657 /* HTTPHeader.swift in Sources */,
 				38F13E7624C3486100BFD657 /* APIServiceHelper.swift in Sources */,
 				38E3B07C24C332CD00A3425B /* About.swift in Sources */,
+				387D19CC24C37658009EC2F7 /* UIApplication+Extension.swift in Sources */,
 				38E3B07324C32E8600A3425B /* AboutTableViewController.swift in Sources */,
+				387D19D224C37B8F009EC2F7 /* UIImageView+Extension.swift in Sources */,
 				387D19C324C35ACC009EC2F7 /* Collection+Extension.swift in Sources */,
 				38E3B07E24C3339300A3425B /* Row.swift in Sources */,
+				387D19D024C376FB009EC2F7 /* UIViewController+Extension.swift in Sources */,
 				38F13E6F24C33AFE00BFD657 /* CharacterSet+Extension.swift in Sources */,
 				38F13E6224C3363700BFD657 /* HTTPMethod.swift in Sources */,
 				387D19C124C358E7009EC2F7 /* Data+Extension.swift in Sources */,
+				387D19CE24C376B8009EC2F7 /* UITableView+Extension.swift in Sources */,
 				38F13E6824C336EA00BFD657 /* Reachability.swift in Sources */,
 				387D19C624C35CBE009EC2F7 /* AboutTableViewCell.swift in Sources */,
 				38F13E5D24C3358800BFD657 /* APIService.swift in Sources */,

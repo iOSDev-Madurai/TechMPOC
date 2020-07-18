@@ -19,3 +19,13 @@ struct NavigtionConstants {
 struct CellIdentifier {
     static let about = "aboutCell"
 }
+
+struct AlertConstants {
+    static let ok = "Ok"
+}
+
+struct ImageConstants {
+
+    static var downloadFail = "errorDown"
+}
+

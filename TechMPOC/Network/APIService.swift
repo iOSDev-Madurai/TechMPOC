@@ -6,38 +6,52 @@
 //  Copyright © 2020 Jegadeeswaran. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class APIService {
 
     public static let shared = APIService()
 
     func requestJSONDataFrom(Service service: serviceReturnType?,
-                            completion: @escaping (Data) -> Void) {
+                                completion: @escaping (Data) -> Void) {
 
-        guard
-            let serviceType = service,
-            Reachability.shared.isConnectedToNetwork()
-            else {
-                print("No internet")
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        DispatchQueue.global(qos: .background).async { [weak self] in
+
+            guard let serviceType = service else {
+                self?.removeIndicator(ResponseConstants.Message.NETWORK_FAILURE_ERROR)
                 return
-        }
-        do {
-            let urlRequest = try URLRequest(serviceType)
-            URLSession.shared.dataTask(with: urlRequest) { [weak self] (data, urlResponse, error) in
-
-                DispatchQueue.main.async {
-                    guard let strongSelf = self else { return }
-                    let val = strongSelf.validate(ResponseData: data, withRequest: urlResponse, andError: error)
-                    if let errorVal = val as? String {
-                        print(errorVal)
-                    } else if let jsonData = val as? Data {
-                        completion(jsonData)
+            }
+            guard Reachability.shared.isConnectedToNetwork() else {
+                self?.removeIndicator(ResponseConstants.Message.NO_NETWORK)
+                return
+            }
+            do {
+                let urlRequest = try URLRequest(serviceType)
+                URLSession.shared.dataTask(with: urlRequest) { [weak self] (data, urlResponse, error) in
+                    DispatchQueue.main.async {
+                        let val = self?.validate(ResponseData: data, withRequest: urlResponse, andError: error)
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        if let errorVal = val as? String {
+                            self?.removeIndicator(errorVal)
+                        } else if let jsonData = val as? Data {
+                            completion(jsonData)
+                        }
                     }
-                }
-            }.resume()
-        } catch  {
-            print(error.localizedDescription)
+                }.resume()
+            } catch  {
+                self?.removeIndicator(error.localizedDescription)
+            }
+        }
+    }
+
+    private func removeIndicator(_ msg: String?) {
+
+        DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            if let errorMsg = msg, let top = UIApplication.topViewController() {
+                top.showAlertWith(andMessage: errorMsg)
+            }
         }
     }
 
@@ -76,8 +90,6 @@ class APIService {
             return ResponseConstants.Message.SERVER_ERROR
         case ResponseConstants.Status.code_404:
             return ResponseConstants.Message.REQUEST_ERROR
-        case ResponseConstants.Status.code_403:
-            return ResponseConstants.Message.SESSION_ERROR
         case ResponseConstants.Status.code_503, ResponseConstants.Status.code_502:
             return ResponseConstants.Message.SERVICE_UNAVAILABLE_ERROR
         default:
