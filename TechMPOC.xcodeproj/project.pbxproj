@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		38E3B05124C329E000A3425B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E3B05024C329E000A3425B /* AppDelegate.swift */; };
-		38E3B05324C329E000A3425B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E3B05224C329E000A3425B /* SceneDelegate.swift */; };
-		38E3B05524C329E000A3425B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E3B05424C329E000A3425B /* ViewController.swift */; };
-		38E3B05824C329E000A3425B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E3B05624C329E000A3425B /* Main.storyboard */; };
 		38E3B05A24C329E100A3425B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38E3B05924C329E100A3425B /* Assets.xcassets */; };
-		38E3B05D24C329E100A3425B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E3B05B24C329E100A3425B /* LaunchScreen.storyboard */; };
 		38E3B06824C329E100A3425B /* TechMPOCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E3B06724C329E100A3425B /* TechMPOCTests.swift */; };
+		38E3B07324C32E8600A3425B /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E3B07224C32E8600A3425B /* AboutTableViewController.swift */; };
+		38E3B07524C330D300A3425B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E3B07424C330D300A3425B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,15 +27,13 @@
 /* Begin PBXFileReference section */
 		38E3B04D24C329E000A3425B /* TechMPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechMPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E3B05024C329E000A3425B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		38E3B05224C329E000A3425B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		38E3B05424C329E000A3425B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		38E3B05724C329E000A3425B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38E3B05924C329E100A3425B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		38E3B05C24C329E100A3425B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38E3B05E24C329E100A3425B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38E3B06324C329E100A3425B /* TechMPOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechMPOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E3B06724C329E100A3425B /* TechMPOCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechMPOCTests.swift; sourceTree = "<group>"; };
 		38E3B06924C329E100A3425B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38E3B07224C32E8600A3425B /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
+		38E3B07424C330D300A3425B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,12 +76,10 @@
 			isa = PBXGroup;
 			children = (
 				38E3B05024C329E000A3425B /* AppDelegate.swift */,
-				38E3B05224C329E000A3425B /* SceneDelegate.swift */,
-				38E3B05424C329E000A3425B /* ViewController.swift */,
-				38E3B05624C329E000A3425B /* Main.storyboard */,
+				38E3B07224C32E8600A3425B /* AboutTableViewController.swift */,
 				38E3B05924C329E100A3425B /* Assets.xcassets */,
-				38E3B05B24C329E100A3425B /* LaunchScreen.storyboard */,
 				38E3B05E24C329E100A3425B /* Info.plist */,
+				38E3B07424C330D300A3425B /* LaunchScreen.storyboard */,
 			);
 			path = TechMPOC;
 			sourceTree = "<group>";
@@ -180,9 +174,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38E3B05D24C329E100A3425B /* LaunchScreen.storyboard in Resources */,
 				38E3B05A24C329E100A3425B /* Assets.xcassets in Resources */,
-				38E3B05824C329E000A3425B /* Main.storyboard in Resources */,
+				38E3B07524C330D300A3425B /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,9 +193,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38E3B05524C329E000A3425B /* ViewController.swift in Sources */,
 				38E3B05124C329E000A3425B /* AppDelegate.swift in Sources */,
-				38E3B05324C329E000A3425B /* SceneDelegate.swift in Sources */,
+				38E3B07324C32E8600A3425B /* AboutTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,25 +215,6 @@
 			targetProxy = 38E3B06424C329E100A3425B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		38E3B05624C329E000A3425B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				38E3B05724C329E000A3425B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		38E3B05B24C329E100A3425B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				38E3B05C24C329E100A3425B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		38E3B06A24C329E100A3425B /* Debug */ = {
@@ -364,6 +337,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TechMPOC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,6 +355,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TechMPOC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
