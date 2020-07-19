@@ -8,7 +8,6 @@
 
 import Foundation
 
-// MARK: - Row
 struct Row: Codable {
     let title, rowDescription: String?
     let imageHref: String?

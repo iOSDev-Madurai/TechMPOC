@@ -13,10 +13,8 @@ extension Data {
     var jsonData: Data {
         if let _ = try? JSONSerialization.jsonObject(with: self, options: .mutableContainers) {
             return self
-        } else if
-            let decodeData = String(decoding: self, as: UTF8.self).data(using: .utf8),
-            let _ = try? JSONSerialization.jsonObject(with: decodeData, options: .mutableContainers) {
-            return decodeData
+        } else if let isoStr = String(data: self, encoding: .isoLatin1) {
+            return isoStr.data(using: .utf8) ?? self
         }
         return self
     }

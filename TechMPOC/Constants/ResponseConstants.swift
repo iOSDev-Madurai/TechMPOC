@@ -18,6 +18,7 @@ struct ResponseConstants {
         static let code_500 = 500
         static let code_503 = 503
         static let code_502 = 502
+        static let code_200 = 200
     }
 
     struct Message {

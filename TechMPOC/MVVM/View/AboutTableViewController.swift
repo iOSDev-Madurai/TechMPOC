@@ -84,9 +84,7 @@ class AboutTableViewController: UITableViewController {
             else {
                 return UITableViewCell()
         }
-        cell.imgView.downloadedImageForm(URL: row.imageHref)
-        cell.titleLabel.text = row.title
-        cell.descriptionLabel.text = row.rowDescription ?? " - "
+        cell.details = row
         return cell
     }
 

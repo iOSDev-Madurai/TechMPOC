@@ -10,6 +10,16 @@ import UIKit
 
 class AboutTableViewCell: UITableViewCell {
 
+    // Properties
+
+    var details: Row? {
+        didSet {
+            imgView.downloadedImageForm(URL: details?.imageHref)
+            titleLabel.text = details?.title
+            descriptionLabel.text = details?.rowDescription ?? " - "
+        }
+    }
+
     let titleLabel : UILabel = {
         let lbl = UILabel()
         lbl.textColor = .black
@@ -34,7 +44,9 @@ class AboutTableViewCell: UITableViewCell {
         imgView.clipsToBounds = true
         return imgView
     }()
-    
+
+    // MARK:- Init
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -46,9 +58,9 @@ class AboutTableViewCell: UITableViewCell {
         titleLabel.anchor(top: topAnchor, left: imgView.rightAnchor, bottom: descriptionLabel.topAnchor, right: rightAnchor, paddingTop: 12.0, paddingLeft: 8.0, paddingBottom: 8.0, paddingRight: 8.0, width: 0, height: 0, enableInsets: false)
         descriptionLabel.anchor(top: nil, left: imgView.rightAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 8.0, paddingLeft: 8.0, paddingBottom: 8.0, paddingRight: 8.0, width: 0, height: 0, enableInsets: false)
     }
-    
+
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
-    
+
 }
