@@ -23,6 +23,8 @@ class AboutTableViewController: UITableViewController {
         }
     }
 
+    private var imageLoader = ImageLoader()
+
     // MARK:- ViewController LifeCycle
 
     override func viewDidLoad() {
@@ -48,7 +50,7 @@ class AboutTableViewController: UITableViewController {
 
     private func setNavigationDetails() {
 
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(self.refreshBarButtonTouched(_:)))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(self.refreshBarButtonTouched(_:)))
         navigationItem.title = NavigtionConstants.Title.updating
     }
 
@@ -85,6 +87,13 @@ class AboutTableViewController: UITableViewController {
                 return UITableViewCell()
         }
         cell.details = row
+        imageLoader.obtainImageWith(ImagePath: row.imageHref) { (image) in
+            DispatchQueue.main.async {
+                if let updateCell = tableView.cellForRow(at: indexPath) as? AboutTableViewCell {
+                    updateCell.imgView.image = image
+                }
+            }
+        }
         return cell
     }
 

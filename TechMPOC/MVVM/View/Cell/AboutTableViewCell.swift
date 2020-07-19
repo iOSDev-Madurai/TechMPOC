@@ -14,7 +14,6 @@ class AboutTableViewCell: UITableViewCell {
 
     var details: Row? {
         didSet {
-            imgView.downloadedImageForm(URL: details?.imageHref)
             titleLabel.text = details?.title
             descriptionLabel.text = details?.rowDescription ?? " - "
         }
